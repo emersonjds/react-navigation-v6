@@ -1,25 +1,29 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Text, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 import users from "../../data.json";
 
 const ContactsList: React.FC = () => {
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       {users.results.map((user) => {
         return (
-          <View
+          <TouchableOpacity
             style={{
               height: 50,
               width: "100%",
               marginBottom: 1,
               paddingHorizontal: 10,
               paddingTop: 5,
+              borderBottomColor: "#ccc",
+              borderBottomWidth: 1,
+              alignItems: "flex-start",
+              justifyContent: "center",
             }}
           >
             <Text>{user.name.first}</Text>
-          </View>
+          </TouchableOpacity>
         );
       })}
     </ScrollView>
