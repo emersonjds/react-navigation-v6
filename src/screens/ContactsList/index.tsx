@@ -1,10 +1,17 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 import users from "../../data.json";
 
-const ContactsList: React.FC = () => {
+const ContactsList: React.FC = ({ navigation }) => {
+  // const navigation = useNavigation();
+
+  useEffect(() => {
+    console.log("NAVIGATION", navigation);
+  });
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       {users.results.map((user) => {
@@ -20,6 +27,12 @@ const ContactsList: React.FC = () => {
               borderBottomWidth: 1,
               alignItems: "flex-start",
               justifyContent: "center",
+            }}
+            key={user.name.first}
+            onPress={() => {
+              navigation.navigate("ContactDetails", {
+                contact: user,
+              });
             }}
           >
             <Text>{user.name.first}</Text>

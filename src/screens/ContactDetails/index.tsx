@@ -1,10 +1,13 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
-// import { Container } from './styles';
-
-const ContactDetails: React.FC = () => {
-  return <View />;
+const ContactDetails: React.FC = ({ route }) => {
+  const contactInfo = route.params.contact;
+  return (
+    <View>
+      <Text>{contactInfo.name.first}</Text>
+    </View>
+  );
 };
 
 export default ContactDetails;
