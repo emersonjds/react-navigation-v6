@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, CommonActions } from "@react-navigation/native";
 import React, { useEffect } from "react";
 import { Text, View } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
@@ -9,8 +9,8 @@ const ContactsList: React.FC = ({ navigation }) => {
   // const navigation = useNavigation();
 
   useEffect(() => {
-    console.log("NAVIGATION", navigation);
-  });
+    console.log(navigation);
+  }, []);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -30,9 +30,19 @@ const ContactsList: React.FC = ({ navigation }) => {
             }}
             key={user.name.first}
             onPress={() => {
-              navigation.navigate("ContactDetails", {
-                contact: user,
-              });
+              navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    {
+                      name: "ContactDetails",
+                      params: {
+                        contact: user,
+                      },
+                    },
+                  ],
+                })
+              );
             }}
           >
             <Text>{user.name.first}</Text>
