@@ -22,10 +22,6 @@ const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
       .then((response) => response.json())
       .then((data) => {
         setDataApi(data.data[2].images.large);
-
-        // console.log("DADOS", data);
-
-        console.log(data.data[0].set.images.symbol);
       })
       .catch((error) => {
         console.log("erro");
