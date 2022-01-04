@@ -5,7 +5,11 @@ import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 import users from "../../data.json";
 
-const ContactsList: React.FC = ({ navigation }) => {
+interface ContactsListProps {
+  navigation: any;
+}
+
+const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
   // const navigation = useNavigation();
 
   useEffect(() => {
