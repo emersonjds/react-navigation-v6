@@ -1,7 +1,11 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-const ContactDetails: React.FC = ({ route }) => {
+interface ContactDetailsProps {
+  route: any;
+}
+
+const ContactDetails: React.FC<ContactDetailsProps> = ({ route }) => {
   const contactInfo = route.params.contact;
   return (
     <View>
