@@ -11,7 +11,9 @@ interface ContactsListProps {
 
 const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
   // const navigation = useNavigation();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(navigation);
+  }, []);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -31,32 +33,9 @@ const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
             }}
             key={user.name.first}
             onPress={() => {
-              navigation.navigate("ContactDetails", {
+              navigation.push("ContactDetails", {
                 contact: user,
               });
-
-              navigation.dispatch(
-                CommonActions.navigate({
-                  name: "ContactDetails",
-                  params: {
-                    contact: user,
-                  },
-                })
-              );
-
-              // navigation.dispatch(
-              //   CommonActions.reset({
-              //     index: 0,
-              //     routes: [
-              //       {
-              //         name: "ContactDetails",
-              //         params: {
-              //           contact: user,
-              //         },
-              //       },
-              //     ],
-              //   })
-              // );
             }}
           >
             <Text>{user.name.first}</Text>
