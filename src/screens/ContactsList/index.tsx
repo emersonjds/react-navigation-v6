@@ -11,10 +11,7 @@ interface ContactsListProps {
 
 const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
   // const navigation = useNavigation();
-
-
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
