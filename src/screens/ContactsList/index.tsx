@@ -31,19 +31,32 @@ const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
             }}
             key={user.name.first}
             onPress={() => {
+              navigation.navigate("ContactDetails", {
+                contact: user,
+              });
+
               navigation.dispatch(
-                CommonActions.reset({
-                  index: 0,
-                  routes: [
-                    {
-                      name: "ContactDetails",
-                      params: {
-                        contact: user,
-                      },
-                    },
-                  ],
+                CommonActions.navigate({
+                  name: "ContactDetails",
+                  params: {
+                    contact: user,
+                  },
                 })
               );
+
+              // navigation.dispatch(
+              //   CommonActions.reset({
+              //     index: 0,
+              //     routes: [
+              //       {
+              //         name: "ContactDetails",
+              //         params: {
+              //           contact: user,
+              //         },
+              //       },
+              //     ],
+              //   })
+              // );
             }}
           >
             <Text>{user.name.first}</Text>
