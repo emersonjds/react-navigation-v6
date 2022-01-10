@@ -29,7 +29,7 @@ export const ContactsStackScreen = () => (
     </ContactsStack.Navigator>
 );
 
-export const ActionsStack = createStackNavigator();
+const ActionsStack = createStackNavigator();
 export const ActionsStackScreen = () => (
     <ActionsStack.Navigator>
         <ActionsStack.Screen name="ActionsList" component={ActionsList} options={{headerShown: false}}/>
