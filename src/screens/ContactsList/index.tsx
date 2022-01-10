@@ -1,6 +1,6 @@
 import { useNavigation, CommonActions } from "@react-navigation/native";
 import React, { useEffect } from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Text } from "react-native";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 import users from "../../data.json";
