@@ -7,7 +7,12 @@ import { MaterialIcons } from "@expo/vector-icons";
 const AppTabs = createBottomTabNavigator();
 
 const AppTabsScreen = () => (
-  <AppTabs.Navigator>
+  <AppTabs.Navigator
+    tabBarOptions={{
+      activeTintColor: "red",
+      activeBackgroundColor: "blue",
+    }}
+  >
     <AppTabs.Screen
       name="Contacts"
       component={ContactsStackScreen}
