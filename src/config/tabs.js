@@ -6,7 +6,7 @@ const AppTabs = createBottomTabNavigator();
 
 const AppTabsScreen = () => (
     <AppTabs.Navigator>
-        <AppTabs.Screen name="Contacts" component={ContactsStackScreen}/>
+        <AppTabs.Screen name="Contacts" component={ContactsStackScreen} options={{ headerShown: false}}/>
         <AppTabs.Screen name="Actions" component={ActionsStackScreen}/>
     </AppTabs.Navigator>
 )

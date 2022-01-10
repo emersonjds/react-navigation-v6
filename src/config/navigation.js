@@ -17,7 +17,6 @@ export const ContactsStackScreen = () => (
             component={ContactsList}
             options={{
                 title: "Contacts",
-                headerShown: false
             }}
         />
         <ContactsStack.Screen
