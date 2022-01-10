@@ -5,6 +5,8 @@ import {createStackNavigator} from "@react-navigation/stack";
 import ContactsList from "../screens/ContactsList";
 import ContactDetails from "../screens/ContactDetails";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import ActionsList from "../screens/ActionsList";
+import ActionsDetails from "../screens/ActionsDetails";
 
 const ContactsStack = createStackNavigator();
 
@@ -28,11 +30,20 @@ const ContactsStackScreen = () => (
     </ContactsStack.Navigator>
 );
 
+const ActionsStack = createStackNavigator();
+const ActionsStackScreen = () => (
+    <ActionsStack.Navigator>
+        <ActionsStack.Screen name="ActionsList" component={ActionsList} options={{ headerShown: false}}/>
+        <ActionsStack.Screen name="ActionsDetails" component={ActionsDetails} />
+    </ActionsStack.Navigator>
+)
+
 const AppTabs = createBottomTabNavigator();
 
 const AppTabsScreen = () => (
     <AppTabs.Navigator>
         <AppTabs.Screen name="Contacts" component={ContactsStackScreen}/>
+        <AppTabs.Screen name="Actions" component={ActionsStackScreen} />
     </AppTabs.Navigator>
 )
 
