@@ -18,7 +18,7 @@ const ContactsList: React.FC<ContactsListProps> = ({ navigation }) => {
             style={{
               height: 50,
               width: "100%",
-              marginBottom: 0.5,
+              marginBottom: 1,
               paddingHorizontal: 10,
               paddingTop: 5,
               borderBottomColor: "#ccc",
